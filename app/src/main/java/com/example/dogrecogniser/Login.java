@@ -8,6 +8,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
@@ -61,8 +62,9 @@ public class Login extends AppCompatActivity {
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent signup = new Intent(Login.this, SignUp.class);
-                startActivity(signup);
+//                Toast.makeText(Login.this, "Fail to login.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Login.this, SignUp.class);
+                startActivity(intent);
             }
         });
 
