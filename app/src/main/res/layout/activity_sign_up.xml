@@ -18,8 +18,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ed_signupusername"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/iv_logo2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo2" />
 
     <Button
         android:id="@+id/btn_signup2"
@@ -27,8 +27,10 @@
         android:layout_height="50dp"
         android:layout_marginBottom="14dp"
         android:text="Sign Up"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/btn_login2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_conpassword" />
 
@@ -87,15 +89,16 @@
         android:layout_height="50dp"
         android:layout_marginBottom="60dp"
         android:text="Log In"
+        android:textAllCaps="false"
         android:textColor="#FF9800"
-        app:backgroundTint="#FFFCFC"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_signup2" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_logo2"
         android:layout_width="149dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
