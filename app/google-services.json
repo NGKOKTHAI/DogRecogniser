@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "26211253965",
+    "project_id": "dogrecogniser",
+    "storage_bucket": "dogrecogniser.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26211253965:android:bff919e70a77417ef6f384",
+        "android_client_info": {
+          "package_name": "com.example.dogrecogniser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26211253965-o9kap55s5fvhhshrgihgcntov2odjv0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2WL2LRzL3yrDQu_7Fqkv0KJSESrCqbk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26211253965-o9kap55s5fvhhshrgihgcntov2odjv0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
