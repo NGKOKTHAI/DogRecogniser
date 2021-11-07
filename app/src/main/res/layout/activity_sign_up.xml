@@ -15,7 +15,7 @@
         android:layout_marginBottom="19dp"
         android:text="Sign Up"
         android:textColor="#FF9800"
-        android:textSize="24sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ed_signupusername"
         app:layout_constraintStart_toStartOf="@+id/iv_logo2"
@@ -28,11 +28,12 @@
         android:layout_marginBottom="14dp"
         android:text="Sign Up"
         android:textAllCaps="false"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_login2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_conpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_signconpassword" />
 
     <EditText
         android:id="@+id/ed_signupusername"
@@ -55,7 +56,7 @@
         android:ems="10"
         android:hint="Enter your password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/ed_conpassword"
+        app:layout_constraintBottom_toTopOf="@+id/ed_signconpassword"
         app:layout_constraintStart_toStartOf="@+id/ed_signupemail"
         app:layout_constraintTop_toBottomOf="@+id/ed_signupemail" />
 
@@ -72,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ed_signupusername" />
 
     <EditText
-        android:id="@+id/ed_conpassword"
+        android:id="@+id/ed_signconpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="19dp"
@@ -91,6 +92,7 @@
         android:text="Log In"
         android:textAllCaps="false"
         android:textColor="#FF9800"
+        android:textSize="18sp"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

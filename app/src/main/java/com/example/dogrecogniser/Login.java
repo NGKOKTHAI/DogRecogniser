@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
-    EditText ed_loginusername, ed_loginpassword;
+    EditText ed_loginemail, ed_loginpassword;
     Button btn_login, btn_signup;
 
     @Override
@@ -20,7 +20,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ed_loginusername = findViewById(R.id.ed_loginusername);
+        ed_loginemail = findViewById(R.id.ed_loginemail);
         ed_loginpassword = findViewById(R.id.ed_loginpassword);
         btn_login = findViewById(R.id.btn_login);
         btn_signup = findViewById(R.id.btn_signup);
@@ -28,11 +28,11 @@ public class Login extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = ed_loginusername.getText().toString().trim();
+                String email = ed_loginemail.getText().toString().trim();
                 String password = ed_loginpassword.getText().toString().trim();
                 if (email.isEmpty()) {
-                    ed_loginusername.setError("Please fill in the username!");
-                    ed_loginusername.requestFocus();
+                    ed_loginemail.setError("Please fill in the username!");
+                    ed_loginemail.requestFocus();
                     return;
                 }
 
@@ -44,8 +44,8 @@ public class Login extends AppCompatActivity {
                 }
 
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    ed_loginusername.setError("Please neter a valid email");
-                    ed_loginusername.requestFocus();
+                    ed_loginemail.setError("Please neter a valid email");
+                    ed_loginemail.requestFocus();
                     return;
                 }
 
