@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 public class SignUp extends AppCompatActivity {
 
     private static final Pattern PASSWORD_PATTERN =
-            Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6}$");
+            Pattern.compile("^"+ "(?=.*[0-9])"+"(?=.*[a-z])"+"(?=.*[A-Z])"+"(?=.*[@#$%^&+=])"+".{6,}"+"$");
 
     EditText ed_signupusername,ed_signupemail,ed_signuppassword,ed_signconpassword;
     Button btn_signup2,btn_login2;
@@ -95,6 +95,7 @@ public class SignUp extends AppCompatActivity {
         if (!PASSWORD_PATTERN.matcher(password).matches()) {
             ed_signuppassword.setError("The password must be at least 6 characters containing at least 1 digit, 1 lower case, 1 upper case and 1 special character!");
             ed_signuppassword.requestFocus();
+            return;
         }
 
         if (confirm.isEmpty()) {
@@ -106,6 +107,7 @@ public class SignUp extends AppCompatActivity {
         if (!confirm.equals(password)) {
             ed_signconpassword.setError("The password is not the same!");
             ed_signconpassword.requestFocus();
+            return;
         }
 
         mAuth.createUserWithEmailAndPassword(email,password)
@@ -124,6 +126,8 @@ public class SignUp extends AppCompatActivity {
                                     if(task.isSuccessful())
                                     {
                                         Toast.makeText(SignUp.this, "Sign Up successful!",Toast.LENGTH_LONG).show();
+                                        Intent intent1 = new Intent(SignUp.this, Login.class);
+                                        startActivity(intent1);
                                     }
                                     else
                                     {
@@ -134,10 +138,16 @@ public class SignUp extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast.makeText(SignUp.this, "Sign Up failed! Try again lalalalaa!",Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignUp.this, "Email registered! Please use another email! ",Toast.LENGTH_LONG).show();
                         }
                     }
                 });
+
+        ed_signupusername.setText("");
+        ed_signupemail.setText("");
+        ed_signuppassword.setText("");
+        ed_signconpassword.setText("");
+
     }
 
 }
