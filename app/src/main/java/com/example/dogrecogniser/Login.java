@@ -83,7 +83,7 @@ public class Login extends AppCompatActivity {
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            ed_loginemail.setError("Please neter a valid email");
+            ed_loginemail.setError("Please enter a valid email");
             ed_loginemail.requestFocus();
             return;
         }
@@ -128,5 +128,8 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+        ed_loginemail.setText("");
+        ed_loginpassword.setText("");
     }
 }
