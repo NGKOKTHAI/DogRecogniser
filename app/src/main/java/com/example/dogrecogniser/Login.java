@@ -57,8 +57,15 @@ public class Login extends AppCompatActivity {
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Login.this, "Fail to login.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Login.this, SignUp.class);
+                startActivity(intent);
+            }
+        });
+
+        tv_forgetpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this,ForgetPassword.class);
                 startActivity(intent);
             }
         });
@@ -94,7 +101,8 @@ public class Login extends AppCompatActivity {
             return;
         }
 
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email,password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
