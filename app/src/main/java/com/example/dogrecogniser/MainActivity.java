@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_logout;
+    Button btn_logout, btn_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn_logout = findViewById(R.id.btn_logout);
+        btn_profile = findViewById(R.id.btn_profile);
+
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent3);
 
                 Toast.makeText(MainActivity.this,"Logout successful!",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(MainActivity.this, ProfileTemp.class);
+                startActivity(intent3);
             }
         });
     }

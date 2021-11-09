@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileTemp">
+
+    <TextView
+        android:id="@+id/tv_greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="72dp"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="--------------------"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_usernametitle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_usernametitle" />
+
+    <TextView
+        android:id="@+id/tv_usernametitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="200dp"
+        android:text="Username:"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_emailaddresstitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="Email Address:"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_username"
+        app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+    <TextView
+        android:id="@+id/tv_emailaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="-------------------"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_emailaddresstitle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_emailaddresstitle" />
+
+    <!-- <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        android:text="Delete Account"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="421dp" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
