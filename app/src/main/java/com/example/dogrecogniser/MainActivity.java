@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
 
                 Intent intent3 = new Intent(MainActivity.this, Login.class);
+                intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent3);
 
                 Toast.makeText(MainActivity.this,"Logout successful!",Toast.LENGTH_LONG).show();

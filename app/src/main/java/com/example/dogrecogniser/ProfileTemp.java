@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.security.keystore.UserNotAuthenticatedException;
 import android.view.View;
@@ -39,7 +40,7 @@ public class ProfileTemp extends AppCompatActivity {
         tv_greeting = findViewById(R.id.tv_greeting);
         tv_username = findViewById(R.id.tv_username);
         tv_emailaddress = findViewById(R.id.tv_emailaddress);
-//        btn_delete = findViewById(R.id.btn_delete);
+        btn_delete = findViewById(R.id.btn_delete);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -70,7 +71,7 @@ public class ProfileTemp extends AppCompatActivity {
             }
         });
 
-/*        btn_delete.setOnClickListener(new View.OnClickListener() {
+        btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(ProfileTemp.this);
@@ -79,12 +80,17 @@ public class ProfileTemp extends AppCompatActivity {
                 dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        FirebaseUser.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful())
                                 {
                                     Toast.makeText(ProfileTemp.this,"Account Deleted",Toast.LENGTH_LONG).show();
+
+                                    Intent intent3 = new Intent(ProfileTemp.this, Login.class);
+                                    intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(intent3);
                                 }
                                 else
                                 {
@@ -96,8 +102,17 @@ public class ProfileTemp extends AppCompatActivity {
                     }
                 });
 
+                dialog.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog alertDialog = dialog.create();
+                alertDialog.show(); 
             }
-        });*/
+        });
 
     }
 
