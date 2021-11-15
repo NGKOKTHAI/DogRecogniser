@@ -85,6 +85,7 @@ public class ProfileTemp extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if(task.isSuccessful())
                                 {
+                                    deleteUser();
                                     Toast.makeText(ProfileTemp.this,"Account Deleted",Toast.LENGTH_LONG).show();
 
                                     Intent intent3 = new Intent(ProfileTemp.this, Login.class);
@@ -98,6 +99,12 @@ public class ProfileTemp extends AppCompatActivity {
                                 }
 
                             }
+
+                            private void deleteUser()
+                            {
+                                    DatabaseReference user = FirebaseDatabase.getInstance().getReference("Users").child(userID);
+                                    user.removeValue();
+                            }
                         });
                     }
                 });
@@ -110,10 +117,13 @@ public class ProfileTemp extends AppCompatActivity {
                 });
 
                 AlertDialog alertDialog = dialog.create();
-                alertDialog.show(); 
+                alertDialog.show();
             }
         });
 
     }
+
+
+
 
 }

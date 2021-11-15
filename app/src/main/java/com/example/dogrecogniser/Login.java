@@ -76,6 +76,7 @@ public class Login extends AppCompatActivity {
     {
         String email = ed_loginemail.getText().toString().trim();
         String password = ed_loginpassword.getText().toString().trim();
+
         if (email.isEmpty()) {
             ed_loginemail.setError("Please fill in the username!");
             ed_loginemail.requestFocus();
