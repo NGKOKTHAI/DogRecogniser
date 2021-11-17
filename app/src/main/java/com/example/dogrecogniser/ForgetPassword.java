@@ -34,13 +34,14 @@ public class ForgetPassword extends AppCompatActivity {
 
         btn_forget.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                resetPassword();
+            public void onClick(View v)
+            {
+                forgetPassword();
             }
         });
     }
 
-    private void resetPassword()
+    private void forgetPassword()
     {
         String email = ed_forgetemail.getText().toString().trim();
 
