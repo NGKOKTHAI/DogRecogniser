@@ -7,21 +7,9 @@
     tools:context=".ProfileTemp">
 
     <TextView
-        android:id="@+id/tv_greeting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="72dp"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/tv_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="27dp"
         android:text="--------------------"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_emailaddresstitle"
@@ -34,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginLeft="84dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginTop="199dp"
+        android:layout_marginBottom="20dp"
         android:text="Username:"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_username"
@@ -64,11 +52,21 @@
         app:layout_constraintStart_toStartOf="@+id/tv_emailaddresstitle"
         app:layout_constraintTop_toBottomOf="@+id/tv_emailaddresstitle" />
 
+    <TextView
+        android:id="@+id/tv_greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_usernametitle"
+        app:layout_constraintEnd_toStartOf="@+id/tv_usernametitle"
+        app:layout_constraintStart_toStartOf="@+id/tv_usernametitle" />
+
     <Button
         android:id="@+id/btn_delete"
         android:layout_width="172dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="188dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="217dp"
         android:text="Delete Account"
         android:textAllCaps="false"
         android:textSize="18dp"

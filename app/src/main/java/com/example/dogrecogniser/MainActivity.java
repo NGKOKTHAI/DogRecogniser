@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent3);
 
                         Toast.makeText(MainActivity.this,"Logout successful!",Toast.LENGTH_LONG).show();
+                        finish();
                     }
 
 

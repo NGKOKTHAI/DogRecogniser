@@ -115,6 +115,7 @@ public class Login extends AppCompatActivity {
                     {
                         //redirect User
                         startActivity(new Intent(Login.this,MainActivity.class));
+                        finish();
                     }
                     else
                     {
@@ -132,5 +133,19 @@ public class Login extends AppCompatActivity {
 
         ed_loginemail.setText("");
         ed_loginpassword.setText("");
+    }
+
+    //maintain the session
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+
+        if(firebaseUser != null)
+        {
+            startActivity(new Intent(Login.this,MainActivity.class));
+            finish();
+        }
     }
 }
