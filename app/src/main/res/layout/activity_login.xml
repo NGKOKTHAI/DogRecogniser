@@ -10,7 +10,7 @@
         android:id="@+id/btn_login"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginBottom="33dp"
         android:text="Log In"
         android:textAllCaps="false"
         android:textSize="18sp"
@@ -37,7 +37,7 @@
         android:id="@+id/btn_signup"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="53dp"
         android:text="Sign Up"
         android:textAllCaps="false"
         android:textColor="#FF9800"
@@ -52,7 +52,7 @@
         android:id="@+id/ed_loginpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/paw_round_corner" />
+        app:srcCompat="@drawable/paw_drop" />
 
     <EditText
         android:id="@+id/ed_loginemail"
@@ -90,7 +90,7 @@
         android:id="@+id/tv_forgetpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="31dp"
         android:text="Forget Password?"
         android:textColor="#FF9800"
         android:textSize="14sp"
