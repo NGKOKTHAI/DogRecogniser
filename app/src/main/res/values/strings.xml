@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Dog Recogniser</string>
+
+<!--navigation drawer aid for disable but ActionBarToggle class needs these 2 strings value as input-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">close navigation drawer</string>
+
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -9,4 +14,13 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="cam_text">Camera</string>
+    <string name="search_text">Search</string>
+    <string name="history_text">History</string>
+    <string name="location_text">Location</string>
+    <string name="profile_text">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

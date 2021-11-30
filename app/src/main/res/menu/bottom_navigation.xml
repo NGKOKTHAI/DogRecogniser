@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_camera"
+        android:icon="@drawable/ic_baseline_camera_alt_24"
+        android:title="Camera"/>
+
+    <item
+        android:id="@+id/nav_history"
+        android:icon="@drawable/ic_baseline_access_time_filled_24"
+        android:title="History"/>
+
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Search"/>
+
+    <item
+        android:id="@+id/nav_location"
+        android:icon="@drawable/ic_baseline_location_on_24"
+        android:title="Location"/>
+
+    <item
+        android:id="@+id/nav_more"
+        android:icon="@drawable/ic_baseline_library_books_24"
+        android:title="More"/>
+
+
+</menu>

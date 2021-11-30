@@ -1,78 +1,86 @@
 package com.example.dogrecogniser;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.view.MenuItem;
+import android.view.WindowManager;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_logout, btn_profile;
+    BottomNavigationView bottom_nav;
+//    private DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_logout = findViewById(R.id.btn_logout);
-        btn_profile = findViewById(R.id.btn_profile);
+/*
+        //toolbar testing
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
+        drawer = findViewById(R.id.drawer_layout);
 
-        btn_logout.setOnClickListener(new View.OnClickListener() {
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer,toolbar,
+                R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+*/
+        //hide statusbar
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        //bottom navigation
+        bottom_nav = findViewById(R.id.bottom_nav);
+        getSupportFragmentManager().beginTransaction().replace(R.id.body_container,new HomeFragment()).commit();
+        bottom_nav.setSelectedItemId(R.id.nav_camera);
+
+        bottom_nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                dialog.setTitle("Log Out");
-                dialog.setMessage("Are you sure to log out?");
-                dialog.setPositiveButton("Log out", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment = null;
+                switch(item.getItemId())
+                {
+                    case R.id.nav_camera:
+                        fragment = new HomeFragment();
+                        break;
 
-                        FirebaseAuth.getInstance().signOut();
+                    case R.id.nav_search:
+                        fragment = new SearchFragment();
+                        break;
 
-                        Intent intent3 = new Intent(MainActivity.this, Login.class);
-                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent3);
+                    case R.id.nav_history:
+                        fragment = new HistoryFragment();
+                        break;
 
-                        Toast.makeText(MainActivity.this,"Logout successful!",Toast.LENGTH_LONG).show();
-                        finish();
-                    }
+                    case R.id.nav_location:
+                        fragment = new LocationFragment();
+                        break;
 
+                    case R.id.nav_more:
+                        fragment = new MoreFragment();
+                        break;
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.body_container,fragment).commit();
 
-            });
-
-                dialog.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-
-                AlertDialog alertDialog = dialog.create();
-                alertDialog.show();
+                return true;
             }
         });
 
-        btn_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent3 = new Intent(MainActivity.this, ProfileTemp.class);
-                startActivity(intent3);
-            }
-        });
     }
+/*    //toolbar
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START))
+        {
+            drawer.closeDrawer(GravityCompat.START);
+        }else{
+                super.onBackPressed();
+            }
+    }*/
 }

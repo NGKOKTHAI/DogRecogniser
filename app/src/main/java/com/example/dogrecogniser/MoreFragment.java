@@ -1,14 +1,16 @@
 package com.example.dogrecogniser;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.security.keystore.UserNotAuthenticatedException;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,24 +25,32 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ProfileTemp extends AppCompatActivity {
+public class MoreFragment extends Fragment {
+
+
+    public MoreFragment() {
+        // Required empty public constructor
+    }
 
     FirebaseUser user;
     DatabaseReference reference;
     String userID;
 
     TextView tv_greeting, tv_username, tv_emailaddress;
-    Button btn_delete;
+    Button btn_delete, btn_logout;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_temp);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view= inflater.inflate(R.layout.fragment_more, container, false);
 
-        tv_greeting = findViewById(R.id.tv_greeting);
-        tv_username = findViewById(R.id.tv_username);
-        tv_emailaddress = findViewById(R.id.tv_emailaddress);
-        btn_delete = findViewById(R.id.btn_delete);
+        tv_greeting = view.findViewById(R.id.tv_greeting);
+        tv_username = view.findViewById(R.id.tv_username);
+        tv_emailaddress = view.findViewById(R.id.tv_emailaddress);
+        btn_delete = view.findViewById(R.id.btn_delete);
+        btn_logout = view.findViewById(R.id.btn_logout);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -66,7 +76,7 @@ public class ProfileTemp extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-                Toast.makeText(ProfileTemp.this,"Something wrong! Try again!",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),"Something wrong! Try again!",Toast.LENGTH_LONG).show();
 
             }
         });
@@ -74,7 +84,7 @@ public class ProfileTemp extends AppCompatActivity {
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder dialog = new AlertDialog.Builder(ProfileTemp.this);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
                 dialog.setTitle("Are you sure?");
                 dialog.setMessage("Deleting this account will result in completely removing your account from the application and you won't be able to access the application!");
                 dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
@@ -86,24 +96,24 @@ public class ProfileTemp extends AppCompatActivity {
                                 if(task.isSuccessful())
                                 {
                                     deleteUser();
-                                    Toast.makeText(ProfileTemp.this,"Account Deleted",Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(),"Account Deleted",Toast.LENGTH_LONG).show();
 
-                                    Intent intent3 = new Intent(ProfileTemp.this, Login.class);
+                                    Intent intent3 = new Intent(getActivity(), Login.class);
                                     intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent3);
                                 }
                                 else
                                 {
-                                    Toast.makeText(ProfileTemp.this, task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), task.getException().getMessage(),Toast.LENGTH_LONG).show();
                                 }
 
                             }
 
                             private void deleteUser()
                             {
-                                    DatabaseReference user = FirebaseDatabase.getInstance().getReference("Users").child(userID);
-                                    user.removeValue();
+                                DatabaseReference user = FirebaseDatabase.getInstance().getReference("Users").child(userID);
+                                user.removeValue();
                             }
                         });
                     }
@@ -121,6 +131,48 @@ public class ProfileTemp extends AppCompatActivity {
             }
         });
 
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+                dialog.setTitle("Log Out");
+                dialog.setMessage("Are you sure to log out?");
+                dialog.setPositiveButton("Log out", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        FirebaseAuth.getInstance().signOut();
+
+                        Intent intent3 = new Intent(getActivity(), Login.class);
+                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent3);
+
+                        Toast.makeText(getActivity(),"Logout successful!",Toast.LENGTH_LONG).show();
+                        finish();
+                    }
+                    private void finish()
+                    {
+                        finish();
+                    }
+
+                });
+
+                dialog.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog alertDialog = dialog.create();
+                alertDialog.show();
+            }
+        });
+
+        return view;
+
     }
+
 
 }

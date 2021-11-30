@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_tips"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="Tips to use"/>
+
+        <item android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_baseline_email_24"
+            android:title="Contact us"/>
+
+        <item android:id="@+id/nav_about"
+            android:icon="@drawable/ic_baseline_groups_24"
+            android:title="About us"/>
+    </group>
+
+    <item android:title="More">
+        <menu>
+            <item android:id="@+id/nav_youtube"
+                android:icon="@drawable/ic_baseline_video_library_24"
+                android:title="Youtube"/>
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/menu_top"/>
+
+    <TextView
+        android:id="@+id/tv_scanning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="250dp"
+        android:text="Scanning Activity "
+        android:textSize="36sp"
+        />
+
+<!--    <Button
+        android:id="@+id/btn_profile"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="370dp"
+        android:text="My Profile"
+        android:textAllCaps="false"
+        android:textSize="18sp" />-->
+
+
+</FrameLayout>
