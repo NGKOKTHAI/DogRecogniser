@@ -127,6 +127,9 @@ public class SignUp extends AppCompatActivity {
                                     if(task.isSuccessful())
                                     {
                                         Toast.makeText(SignUp.this, "Sign Up successful!",Toast.LENGTH_LONG).show();
+
+                                        //clear user session to avoid straight login in onStart()
+                                        FirebaseAuth.getInstance().signOut();
                                         Intent intent1 = new Intent(SignUp.this, Login.class);
                                         startActivity(intent1);
                                     }
