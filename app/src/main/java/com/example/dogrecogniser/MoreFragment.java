@@ -151,10 +151,6 @@ public class MoreFragment extends Fragment {
                         Toast.makeText(getActivity(),"Logout successful!",Toast.LENGTH_LONG).show();
                         finish();
                     }
-                    private void finish()
-                    {
-                        finish();
-                    }
 
                 });
 
@@ -172,6 +168,11 @@ public class MoreFragment extends Fragment {
 
         return view;
 
+    }
+
+    private void finish()
+    {
+        finish();
     }
 
 
