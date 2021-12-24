@@ -127,7 +127,7 @@ public class Login extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(Login.this,"Wrong email/password or Not sign up yet!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this,"Fail to login!",Toast.LENGTH_LONG).show();
                 }
             }
         });
