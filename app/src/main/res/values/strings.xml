@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Dog Recogniser</string>
 
-<!--navigation drawer aid for disable but ActionBarToggle class needs these 2 strings value as input-->
+    <!--navigation drawer aid for disable but ActionBarToggle class needs these 2 strings value as input-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">close navigation drawer</string>
 
