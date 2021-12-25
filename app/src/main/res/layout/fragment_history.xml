@@ -26,6 +26,7 @@
             android:gravity="center"
             android:text="History"
             android:textAllCaps="false"
+            android:textColor="#FF9800"
             android:textSize="32dp" />
 
         <ListView

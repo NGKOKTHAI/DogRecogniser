@@ -31,26 +31,173 @@
                 app:srcCompat="@drawable/paw_drop_round" />
 
             <TextView
-                android:id="@+id/tv_aboutus"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_advice"
+                android:layout_width="360dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="About Us "
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Dogs might be in just a small part of our lives, but to them, we are their whole life..."
+                android:textAlignment="center"
+                android:textColor="#FF9800"
                 android:textSize="28dp" />
 
             <TextView
-                android:id="@+id/tv_aboutus2"
-                android:layout_width="388dp"
+                android:id="@+id/tv_aboutus"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Dog Recogniser is an Android mobile application which is able to recognise dog breeds by scanning image uploaded by user."
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="About Dog Recogniser"
+                android:textColor="#FF9800"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tv_aboutus2"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Dog Recogniser is an Android mobile application which is able to recognise dog breeds by scanning image uploaded by user. This application is able to detect only 133 breeds of dog. "
+                android:textAlignment="viewStart"
                 android:textSize="20dp" />
 
-            <ListView
-                android:id="@+id/list"
-                android:layout_width="301dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center" />
+            <TextView
+                android:id="@+id/tv_aboutus3"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Besides the purpose of recognition, this application promotes adoption rather than buying one by locating nearest NGO dog shelter."
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_aboutus4"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="The information of dog breeds in this application is using documents from FCI and AKC (for breeds missing information in FCI documents)."
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_fci"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Fédération Cynologique Internationale (FCI)"
+                android:textColor="#FF9800"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tv_fci2"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Formed in 1911 under the auspices of the kennel clubs of Austria, Belgium, France, Germany and the Netherlands, the purpose is to  bring global uniformity to the breeding, exhibiting and judging of pure-bred dogs. FCI automatically recognises all registered breeds recognised by any of its member kennel clubs"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_akc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="American Kennel Club (AKC)"
+                android:textColor="#FF9800"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tv_akc2"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="AKC is one of the oldest kennel club in the world. AKC was formed in 1884. It is a registry of purebred dog pedigrees in the United States. In order to maintain its pedigree registry, this kennel club also promotes and sanctions events for purebred dogs. AKC is a non-member partner with the FCI."
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_youtube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Additional Information"
+                android:textColor="#FF9800"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tv_link1"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Adopt, Don't Buy with Shannon Lam | KL Pooch Rescue"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_link2"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="OWNING A DOG | Things to Know Before Getting a Puppy! | Doctor Mike"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_link3"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="How to Take Care of a Puppy: Bringing a Puppy Home "
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_link4"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="How To Manage Having A Dog With A Busy Schedule"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_link5"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="How much do dogs really cost? Lifetime cost of dog ownership"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_link6"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Cleaning A Dog's Ears - Veterinary Training"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_link7"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="DOG TRAINING FUNDAMENTALS"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_link8"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="The PDRM K9 unit"
+                android:textSize="20dp" />
 
         </LinearLayout>
 

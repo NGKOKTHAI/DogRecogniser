@@ -46,7 +46,7 @@ public class ForgetPassword extends AppCompatActivity {
         String email = ed_forgetemail.getText().toString().trim();
 
         if (email.isEmpty()) {
-            ed_forgetemail.setError("Please fill in the username!");
+            ed_forgetemail.setError("Please fill in the email address!");
             ed_forgetemail.requestFocus();
             return;
         }
