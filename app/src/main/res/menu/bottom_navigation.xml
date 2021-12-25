@@ -4,7 +4,7 @@
     <item
         android:id="@+id/nav_camera"
         android:icon="@drawable/ic_baseline_camera_alt_24"
-        android:title="Scan"/>
+        android:title="Camera"/>
 
     <item
         android:id="@+id/nav_history"
@@ -22,9 +22,9 @@
         android:title="Location"/>
 
     <item
-        android:id="@+id/nav_more"
-        android:icon="@drawable/ic_baseline_library_books_24"
-        android:title="More"/>
+        android:id="@+id/nav_account"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Account"/>
 
 
 </menu>

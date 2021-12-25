@@ -118,38 +118,44 @@ public class HomeFragment extends Fragment {
         btn_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                img = Bitmap.createScaledBitmap(img, 7,7,true);
 
-                try {
-                    TfliteModel model = TfliteModel.newInstance(getActivity().getApplicationContext());
+                if(img != null){
+                    img = Bitmap.createScaledBitmap(img, 7,7,true);
 
-                    // Creates inputs for reference.
-                    TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 7, 7, 512}, DataType.FLOAT32);
+                    try {
+                        TfliteModel model = TfliteModel.newInstance(getActivity().getApplicationContext());
 
-                    Log.d("shape", inputFeature0.getBuffer().toString());
-                    TensorImage tensorImage = new TensorImage(DataType.FLOAT32);
-                    tensorImage.load(img);
-                    ByteBuffer byteBuffer = tensorImage.getBuffer();
+                        // Creates inputs for reference.
+                        TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 7, 7, 512}, DataType.FLOAT32);
 
-                    Log.d("shape", byteBuffer.toString());
+                        Log.d("shape", inputFeature0.getBuffer().toString());
+                        TensorImage tensorImage = new TensorImage(DataType.FLOAT32);
+                        tensorImage.load(img);
+                        ByteBuffer byteBuffer = tensorImage.getBuffer();
 
-                    Log.d("shape", inputFeature0.getBuffer().toString());
-                    inputFeature0.loadBuffer(byteBuffer);
+                        Log.d("shape", byteBuffer.toString());
 
-                    // Runs model inference and gets result.
-                    TfliteModel.Outputs outputs = model.process(inputFeature0);
-                    TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
+                        Log.d("shape", inputFeature0.getBuffer().toString());
+                        inputFeature0.loadBuffer(byteBuffer);
 
-                    // Releases model resources if no longer used.
-                    model.close();
+                        // Runs model inference and gets result.
+                        TfliteModel.Outputs outputs = model.process(inputFeature0);
+                        TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
-                    breed.setVisibility(View.VISIBLE);
-                    breed.setText("This dog breed looks like " + outputFeature0);
+                        // Releases model resources if no longer used.
+                        model.close();
+
+                        breed.setVisibility(View.VISIBLE);
+                        breed.setText("This dog breed looks like " + outputFeature0);
 
 
-                } catch (IOException e) {
-                    // TODO Handle the exception
+                    } catch (IOException e) {
+                        // TODO Handle the exception
+                    }
+                }else{
+                    Toast.makeText(getActivity(),"Please insert image!",Toast.LENGTH_LONG).show();
                 }
+
             }
 
         });

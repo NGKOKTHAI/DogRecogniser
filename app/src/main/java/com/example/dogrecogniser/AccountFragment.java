@@ -25,10 +25,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MoreFragment extends Fragment {
+public class AccountFragment extends Fragment {
 
 
-    public MoreFragment() {
+    public AccountFragment() {
         // Required empty public constructor
     }
 
@@ -37,20 +37,21 @@ public class MoreFragment extends Fragment {
     String userID;
 
     TextView tv_greeting, tv_username, tv_emailaddress;
-    Button btn_delete, btn_logout;
+    Button btn_delete, btn_logout,btn_more;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_more, container, false);
+        View view= inflater.inflate(R.layout.fragment_account, container, false);
 
         tv_greeting = view.findViewById(R.id.tv_greeting);
         tv_username = view.findViewById(R.id.tv_username);
         tv_emailaddress = view.findViewById(R.id.tv_emailaddress);
         btn_delete = view.findViewById(R.id.btn_delete);
         btn_logout = view.findViewById(R.id.btn_logout);
+        btn_more = view.findViewById(R.id.btn_more);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -163,6 +164,13 @@ public class MoreFragment extends Fragment {
 
                 AlertDialog alertDialog = dialog.create();
                 alertDialog.show();
+            }
+        });
+
+        btn_more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),More.class));
             }
         });
 

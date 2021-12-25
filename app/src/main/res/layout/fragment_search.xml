@@ -30,7 +30,7 @@
                 android:textSize="32dp" />
 
 
-            <AutoCompleteTextView
+            <EditText
                 android:id="@+id/ed_search"
                 android:layout_width="250dp"
                 android:layout_height="40dp"

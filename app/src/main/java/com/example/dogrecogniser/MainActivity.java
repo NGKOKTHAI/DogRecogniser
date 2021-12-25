@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new LocationFragment();
                         break;
 
-                    case R.id.nav_more:
-                        fragment = new MoreFragment();
+                    case R.id.nav_account:
+                        fragment = new AccountFragment();
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.body_container,fragment).commit();
