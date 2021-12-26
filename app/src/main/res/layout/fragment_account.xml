@@ -79,30 +79,31 @@
 
             <Button
                 android:id="@+id/btn_delete"
-                android:layout_width="172dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="80dp"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="100dp"
                 android:text="Delete Account"
                 android:textAllCaps="false"
                 android:textSize="18sp"/>
 
             <Button
                 android:id="@+id/btn_logout"
-                android:layout_width="172dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="1dp"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginLeft="100dp"
                 android:text="Log Out"
                 android:textAllCaps="false"
                 android:textSize="18sp"/>
 
             <Button
                 android:id="@+id/btn_more"
-                android:layout_width="172dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="1dp"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginLeft="100dp"
                 android:text="More"
                 android:textAllCaps="false"
                 android:textSize="18sp" />

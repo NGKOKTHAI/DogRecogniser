@@ -53,7 +53,6 @@
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="140dp"
-                    android:layout_marginLeft="300dp"
                     android:text="Capture"
                     android:textAllCaps="false"
                     android:textSize="18dp" />
@@ -63,7 +62,6 @@
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="140dp"
-                    android:layout_marginLeft="100dp"
                     android:text="Gallery"
                     android:textAllCaps="false"
                     android:textSize="18dp" />
@@ -73,9 +71,8 @@
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="1dp"
-        android:text="Predict"
+        android:layout_marginLeft="100dp"
+        android:text="Recognise"
         android:textAllCaps="false"
         android:textSize="18dp" />
 
