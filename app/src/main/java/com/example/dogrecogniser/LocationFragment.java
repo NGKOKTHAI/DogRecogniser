@@ -8,8 +8,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +49,7 @@ import java.util.List;
 public class LocationFragment extends Fragment {
 
     Spinner spType;
-    Button btn_go,btn_mapType;
+    Button btn_go, btn_mapType;
     SupportMapFragment supportMapFragment;
     GoogleMap map;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -68,7 +71,7 @@ public class LocationFragment extends Fragment {
         spType = view.findViewById(R.id.sp_type);
         btn_go = view.findViewById(R.id.btn_go);
         btn_mapType = view.findViewById(R.id.btn_mapType);
-        supportMapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
+        supportMapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.google_map);
 
 
@@ -85,21 +88,13 @@ public class LocationFragment extends Fragment {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
 
 
-        //check permission
-        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            //when permission granted
-            //call method
-            getCurrentLocation();
-        } else {
-            //When permission denied
-            //request permission
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
-        }
 
 
         btn_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("result","button working");
+                checkPermission();
                 //get selected position of spinner
                 int i = spType.getSelectedItemPosition();
                 //initialise url
@@ -126,6 +121,32 @@ public class LocationFragment extends Fragment {
         return view;
     }
 
+
+    private void checkPermission(){
+
+        //check permission
+
+        if (ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            Log.d("result","a");
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
+        }else{
+            Log.d("result","b");
+            getCurrentLocation();
+        }
+/*        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            //when permission granted
+            //call method
+//            getCurrentLocation();
+
+        } else {
+            //When permission denied
+            //request permission
+
+            //Toast.makeText(getActivity(),"Location Premission required!",Toast.LENGTH_LONG).show();
+//            requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
+        }*/
+
+    }
 
     private void getCurrentLocation() {
         Task<Location> task = fusedLocationProviderClient.getLastLocation();
@@ -266,7 +287,6 @@ public class LocationFragment extends Fragment {
 
         }
     }
-
 
     public void changeType(){
         if (map.getMapType() == GoogleMap.MAP_TYPE_NORMAL){
