@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:gravity="clip_horizontal|center_vertical"
-            android:text="        Dog Recogniser"
+            android:text="           Dog Recogniser"
             android:textColor="@color/white"
             android:textSize="36sp"
             android:textStyle="bold" />

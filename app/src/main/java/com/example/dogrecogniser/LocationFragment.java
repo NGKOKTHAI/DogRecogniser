@@ -54,6 +54,7 @@ public class LocationFragment extends Fragment {
     GoogleMap map;
     FusedLocationProviderClient fusedLocationProviderClient;
     double currentLat = 0, currentLong = 0;
+    Marker myMarker;
 
 
     public LocationFragment() {
@@ -86,14 +87,13 @@ public class LocationFragment extends Fragment {
 
         //initialise fused location provider client
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
-
-
+        
 
 
         btn_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("result","button working");
+                Log.d("result", "button working");
                 checkPermission();
                 //get selected position of spinner
                 int i = spType.getSelectedItemPosition();
@@ -122,15 +122,15 @@ public class LocationFragment extends Fragment {
     }
 
 
-    private void checkPermission(){
+    private void checkPermission() {
 
         //check permission
 
-        if (ContextCompat.checkSelfPermission(getActivity(),Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-            Log.d("result","a");
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            Log.d("result", "a");
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
-        }else{
-            Log.d("result","b");
+        } else {
+            Log.d("result", "b");
             getCurrentLocation();
         }
 /*        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -166,11 +166,17 @@ public class LocationFragment extends Fragment {
                         public void onMapReady(@NonNull GoogleMap googleMap) {
                             //when map is ready
                             map = googleMap;
+                            LatLng latlng = new LatLng(currentLat,currentLong);
+                            //initialise marker options
+
+                            myMarker =  map.addMarker(new MarkerOptions().position(latlng).title("My Place"));
+                            map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLat,currentLong),20));
                             //zoom current location on map
                             map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLat,currentLong),10));
                         }
                     });
                 }
+
             }
         });
 

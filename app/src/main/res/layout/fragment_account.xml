@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/menu_top" />
+        layout="@layout/menu_top2" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,9 +21,9 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="358dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="140dp"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
@@ -81,9 +81,8 @@
                 android:id="@+id/btn_delete"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="130dp"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="60dp"
                 android:text="Delete Account"
                 android:textAllCaps="false"
                 android:textSize="18sp"/>
@@ -92,7 +91,7 @@
                 android:id="@+id/btn_logout"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="130dp"
+                android:layout_marginStart="100dp"
                 android:layout_marginLeft="100dp"
                 android:text="Log Out"
                 android:textAllCaps="false"
@@ -102,7 +101,7 @@
                 android:id="@+id/btn_more"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="130dp"
+                android:layout_marginStart="100dp"
                 android:layout_marginLeft="100dp"
                 android:text="More"
                 android:textAllCaps="false"

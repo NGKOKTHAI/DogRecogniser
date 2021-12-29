@@ -6,11 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".Login">
 
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="21dp"
+        android:text="Welcome to Dog Recogniser"
+        android:textColor="#FF9800"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ed_loginemail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo1" />
+
     <Button
         android:id="@+id/btn_login"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="33dp"
         android:text="Log In"
         android:textAllCaps="false"
         android:textSize="18dp"
@@ -19,46 +32,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgetpassword" />
 
-    <TextView
-        android:id="@+id/tv_welcome"
+    <EditText
+        android:id="@+id/ed_loginpassword"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:text="Welcome to Dog Recogniser"
-        android:textColor="#FF9800"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ed_loginemail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        android:layout_height="40dp"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/search_layout"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="   Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/tv_forgetpassword"
+        app:layout_constraintStart_toStartOf="@+id/ed_loginemail"
+        app:layout_constraintTop_toBottomOf="@+id/ed_loginemail" />
 
     <Button
         android:id="@+id/btn_signup"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginBottom="55dp"
         android:text="Sign Up"
         android:textAllCaps="false"
         android:textColor="#FF9800"
         android:textSize="18dp"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_logo1" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
-    <ImageView
-        android:id="@+id/iv_logo1"
-        android:layout_width="130dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="103dp"
-        android:layout_marginBottom="333dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_signup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/paw_drop_round" />
+    <TextView
+        android:id="@+id/tv_forgetpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:text="Forget Password?"
+        android:textColor="#FF9800"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/ed_loginpassword" />
 
     <EditText
         android:id="@+id/ed_loginemail"
@@ -68,48 +82,31 @@
         android:layout_marginBottom="11dp"
         android:background="@drawable/search_layout"
         android:ems="10"
-        android:hint="   Email Address"
         android:gravity="center"
+        android:hint="   Email Address"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/ed_loginpassword"
         app:layout_constraintStart_toStartOf="@+id/tv_welcome"
         app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
 
-    <EditText
-        android:id="@+id/ed_loginpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/search_layout"
-        android:ems="10"
-        android:hint="   Password"
-        android:gravity="center"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/tv_forgetpassword"
-        app:layout_constraintStart_toStartOf="@+id/ed_loginemail"
-        app:layout_constraintTop_toBottomOf="@+id/ed_loginemail" />
-
-    <TextView
-        android:id="@+id/tv_forgetpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/iv_logo1"
+        android:layout_width="96dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="31dp"
-        android:text="Forget Password?"
-        android:textColor="#FF9800"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintBottom_toTopOf="@+id/tv_welcome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_loginpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:srcCompat="@drawable/paw_drop_round" />
 
     <include
         android:id="@+id/include"
         layout="@layout/menu_top"
         android:layout_width="425dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="148dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_welcome"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/iv_logo1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -101,7 +101,7 @@ public class SearchFragment extends Fragment {
                    }
                 }
 
-                ArrayAdapter adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),android.R.layout.simple_list_item_1,breedlist);
+                ArrayAdapter adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),R.layout.listview_layout,breedlist);
                 result_list.setAdapter(adapter);
 
                 result_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {

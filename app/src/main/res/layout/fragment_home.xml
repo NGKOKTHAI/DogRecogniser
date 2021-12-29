@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/menu_top" />
+        layout="@layout/menu_top2" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,8 +21,8 @@
 
             <ImageView
                 android:id="@+id/logo3"
-                android:layout_width="91dp"
-                android:layout_height="90dp"
+                android:layout_width="80dp"
+                android:layout_height="76dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/paw_drop_round" />
@@ -31,7 +31,7 @@
         android:id="@+id/textView"
         android:layout_width="307dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="0dp"
         android:gravity="center"
@@ -42,8 +42,8 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="308dp"
-                android:layout_height="215dp"
-                android:layout_marginStart="50dp"
+                android:layout_height="138dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginLeft="300dp"
                 android:layout_marginTop="0dp" />
 
@@ -52,7 +52,7 @@
                     android:id="@+id/btn_take"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="140dp"
+                    android:layout_marginStart="120dp"
                     android:text="Capture"
                     android:textAllCaps="false"
                     android:textSize="18dp" />
@@ -61,7 +61,7 @@
                     android:id="@+id/btn_gallery"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="140dp"
+                    android:layout_marginStart="120dp"
                     android:text="Gallery"
                     android:textAllCaps="false"
                     android:textSize="18dp" />
@@ -70,8 +70,7 @@
         android:id="@+id/btn_upload"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginStart="120dp"
         android:text="Recognise"
         android:textAllCaps="false"
         android:textSize="18dp" />
@@ -82,7 +81,6 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             android:layout_marginStart="50dp"
-            android:layout_marginLeft="100dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:text="Bulldog"

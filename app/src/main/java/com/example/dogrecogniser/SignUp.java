@@ -41,7 +41,7 @@ public class SignUp extends AppCompatActivity {
         ed_signuppassword = findViewById(R.id.ed_signuppassword);
         ed_signconpassword = findViewById(R.id.ed_signconpassword);
         btn_signup2 = findViewById(R.id.btn_signup2);
-        btn_login2 = findViewById(R.id.btn_login2);
+//        btn_login2 = findViewById(R.id.btn_login2);
 
         btn_signup2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,13 +51,13 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-        btn_login2.setOnClickListener(new View.OnClickListener() {
+/*        btn_login2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(SignUp.this, Login.class);
                 startActivity(intent1);
             }
-        });
+        });*/
 
 
     }

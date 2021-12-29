@@ -69,7 +69,7 @@ public class HistoryFragment extends Fragment {
                         urllist.add(breed.child("Url").getValue().toString());
                 }
 
-                ArrayAdapter adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),android.R.layout.simple_list_item_1,breedlist);
+                ArrayAdapter adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(),R.layout.listview_layout,breedlist);
                 historylist.setAdapter(adapter);
 
                 historylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
