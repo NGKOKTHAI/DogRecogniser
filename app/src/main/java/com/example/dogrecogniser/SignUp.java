@@ -94,7 +94,7 @@ public class SignUp extends AppCompatActivity {
         }
 
         if (!PASSWORD_PATTERN.matcher(password).matches()) {
-            ed_signuppassword.setError("The password must be at least 6 characters containing at least 1 digit, 1 lower case, 1 upper case and 1 special character!");
+            ed_signuppassword.setError("The password must be at least 6 characters containing at least 1 digit, 1 lower case, 1 upper case and 1 any of these special character (@#$%^&+=)!");
             ed_signuppassword.requestFocus();
             return;
         }

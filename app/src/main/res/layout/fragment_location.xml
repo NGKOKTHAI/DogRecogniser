@@ -1,71 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LocationFragment">
-
     <include
         android:id="@+id/include"
         layout="@layout/menu_top2"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="578dp"
-        android:layout_marginTop="75dp"
-        android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:text=" Nearby"
+        android:textAllCaps="false"
+        android:textColor="#FF9800"
+        android:textSize="32dp" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="Nearby"
-            android:textAllCaps="false"
-            android:textColor="#FF9800"
-            android:textSize="32dp" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="180dp"
+        android:gravity="center"
+        android:text="Start using map by clicking the button below."
+        android:textAllCaps="false"
+        android:textSize="24dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <Button
+        android:id="@+id/btn_searchNearby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="400dp"
+        android:text="Search Nearby"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
 
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/sp_type"
-            android:background="@android:drawable/editbox_background"/>
-
-        <Button
-            android:id="@+id/btn_go"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="Go"
-            android:textAllCaps="false"
-            android:textSize="18dp" />
-
-            <Button
-                android:id="@+id/btn_mapType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:text="Map Type"
-                android:textAllCaps="false"
-                android:textSize="18dp" />
-
-        </LinearLayout>
-
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/google_map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"/>
-
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="107dp"
+        android:layout_height="137dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="290dp"
+        android:src="@drawable/ic_baseline_location_on_24" />
 
 </FrameLayout>

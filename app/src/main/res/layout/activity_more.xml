@@ -54,7 +54,7 @@
             <TextView
                 android:id="@+id/tv_aboutus2"
                 android:layout_width="322dp"
-                android:layout_height="93dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Dog Recogniser is an Android mobile application which is able to recognise dog breeds by scanning image uploaded by user. This application is able to detect only 133 breeds of dog. "
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Formed in 1911 under the auspices of the kennel clubs of Austria, Belgium, France, Germany and the Netherlands, the purpose is to  bring global uniformity to the breeding, exhibiting and judging of pure-bred dogs. FCI automatically recognises all registered breeds recognised by any of its member kennel clubs"
+                android:text="Formed in 1911 under the auspices of the kennel clubs of Austria, Belgium, France, Germany and the Netherlands, the purpose is to  bring global uniformity to the breeding, exhibiting and judging of pure-bred dogs. FCI automatically recognises all registered breeds recognised by any of its member kennel clubs."
                 android:textSize="20dp" />
 
             <TextView

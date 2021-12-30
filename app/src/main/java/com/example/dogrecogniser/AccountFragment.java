@@ -170,6 +170,7 @@ public class AccountFragment extends Fragment {
         btn_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(getActivity(),More.class));
             }
         });

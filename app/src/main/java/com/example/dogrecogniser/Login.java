@@ -23,8 +23,6 @@ import java.util.regex.Pattern;
 
 public class Login extends AppCompatActivity {
 
-    private static final Pattern PASSWORD_PATTERN =
-            Pattern.compile("^"+ "(?=.*[0-9])"+"(?=.*[a-z])"+"(?=.*[A-Z])"+"(?=.*[@#$%^&+=])"+".{6,}"+"$");
 
     TextView tv_forgetpassword;
     EditText ed_loginemail, ed_loginpassword;
@@ -97,11 +95,6 @@ public class Login extends AppCompatActivity {
 
         }
 
-        if (!PASSWORD_PATTERN.matcher(password).matches()) {
-            ed_loginpassword.setError("The password must be at least 6 characters containing at least 1 digit, 1 lower case, 1 upper case and 1 special character!");
-            ed_loginpassword.requestFocus();
-            return;
-        }
 
         mAuth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -127,13 +120,11 @@ public class Login extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(Login.this,"Fail to login!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this,"Fail to login! Check your email or password!",Toast.LENGTH_LONG).show();
                 }
             }
         });
 
-        ed_loginemail.setText("");
-        ed_loginpassword.setText("");
     }
 
     //maintain the session
