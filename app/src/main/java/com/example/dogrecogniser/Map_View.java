@@ -180,7 +180,7 @@ public class Map_View extends FragmentActivity implements OnMapReadyCallback,
                 dataTransfer[1] = url;
 
                 getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(Map_View.this, "Showing Nearby Veterinary Clinics", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Map_View.this, "Showing Nearby Veterinary Care Centres", Toast.LENGTH_SHORT).show();
                 break;
 
 
@@ -192,7 +192,7 @@ public class Map_View extends FragmentActivity implements OnMapReadyCallback,
                 dataTransfer[1] = url;
 
                 getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(Map_View.this, "Showing Nearby NGO Dog Shelters", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Map_View.this, "Showing Nearby Pet Stores", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

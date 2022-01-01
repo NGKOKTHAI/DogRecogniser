@@ -20,11 +20,11 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="110dp"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="History"
+            android:text="Search History"
             android:textAllCaps="false"
             android:textColor="#FF9800"
             android:textSize="32dp" />
