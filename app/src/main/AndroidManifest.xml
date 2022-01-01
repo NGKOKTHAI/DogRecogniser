@@ -7,6 +7,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+        <queries>
+            <package android:name="com.google.android.apps.maps" />
+        </queries>
 
     <application
         android:allowBackup="true"
@@ -19,7 +25,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD6_FOjkuerzHQs4QWX1esA2KMi80yf-XQ" />
+            android:value="AIzaSyApeeuMjVIgGp_o-JwWMs8IHAX1W0VoMHk" />
 
         <activity
             android:name=".More"

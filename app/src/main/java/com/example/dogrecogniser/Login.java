@@ -120,7 +120,7 @@ public class Login extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(Login.this,"Fail to login! Check your email or password!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Login.this,"Fail to login! Something went wrong!z",Toast.LENGTH_LONG).show();
                 }
             }
         });

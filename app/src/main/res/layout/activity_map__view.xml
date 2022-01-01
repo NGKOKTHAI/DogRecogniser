@@ -56,8 +56,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:text="Find"
                 android:fontFamily="@font/arcena"
+                android:onClick="onClick"
+                android:text="Find"
                 android:textAllCaps="false"
                 android:textSize="18dp" />
 
@@ -73,20 +74,22 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:text="Veterinary Clinic"
                 android:fontFamily="@font/arcena"
+                android:onClick="onClick"
+                android:text="Veterinary Clinic"
                 android:textAllCaps="false"
                 android:textColor="#FF9800"
                 android:textSize="18dp"
                 app:backgroundTint="#FFFFFF" />
 
             <Button
-                android:id="@+id/btn_ngo"
+                android:id="@+id/btn_pet"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:text="NGO Dog Shelter"
                 android:fontFamily="@font/arcena"
+                android:onClick="onClick"
+                android:text="NGO Dog Shelter"
                 android:textAllCaps="false"
                 android:textColor="#FF9800"
                 android:textSize="18dp"
