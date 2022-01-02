@@ -26,10 +26,10 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Nearby"
                 android:layout_marginStart="140dp"
                 android:fontFamily="@font/arcena"
+                android:gravity="center"
+                android:text="Nearby"
                 android:textAllCaps="false"
                 android:textColor="#FF9800"
                 android:textSize="32dp" />
@@ -46,9 +46,9 @@
                 android:layout_width="257dp"
                 android:layout_height="40dp"
                 android:background="@drawable/search_layout"
+                android:fontFamily="@font/arcena"
                 android:gravity="center"
                 android:hint="Search for other places"
-                android:fontFamily="@font/arcena"
                 android:inputType="textPersonName" />
 
             <Button

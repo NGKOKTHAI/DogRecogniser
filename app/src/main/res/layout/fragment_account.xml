@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
-                android:textSize="30dp" />
+                android:textSize="28dp" />
 
 
             <TextView
@@ -46,18 +46,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:text="Username:"
-                android:textSize="24sp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/tv_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="0dp"
                 android:text="--------------------"
-                android:textSize="20dp"/>
+                android:textSize="18dp"/>
 
             <TextView
                 android:id="@+id/tv_emailaddresstitle"
@@ -66,23 +66,23 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
                 android:text="Email Address:"
-                android:textSize="24dp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/tv_emailaddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="0dp"
                 android:text="-------------------"
-                android:textSize="20dp"/>
+                android:textSize="18dp"/>
 
             <Button
                 android:id="@+id/btn_delete"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:text="Delete Account"
                 android:textAllCaps="false"
                 android:textSize="18sp"/>

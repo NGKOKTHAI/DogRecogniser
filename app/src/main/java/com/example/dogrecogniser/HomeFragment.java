@@ -122,20 +122,21 @@ public class HomeFragment extends Fragment {
                 if(img != null){
                     img = Bitmap.createScaledBitmap(img, 7,7,true);
 
+                    img = resizeBitmap(img, 224);
                     try {
                         TfliteModel model = TfliteModel.newInstance(getActivity().getApplicationContext());
 
                         // Creates inputs for reference.
                         TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 7, 7, 512}, DataType.FLOAT32);
 
-                        Log.d("shape", inputFeature0.getBuffer().toString());
+                        Log.d("shape1", inputFeature0.getBuffer().toString());
                         TensorImage tensorImage = new TensorImage(DataType.FLOAT32);
                         tensorImage.load(img);
                         ByteBuffer byteBuffer = tensorImage.getBuffer();
 
-                        Log.d("shape", byteBuffer.toString());
+                        Log.d("shape2", byteBuffer.toString());
 
-                        Log.d("shape", inputFeature0.getBuffer().toString());
+                        Log.d("shape3", inputFeature0.getBuffer().toString());
                         inputFeature0.loadBuffer(byteBuffer);
 
                         // Runs model inference and gets result.
@@ -187,6 +188,22 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    private Bitmap resizeBitmap(Bitmap img, int i) {
+        int width = img.getWidth();
+        int height = img.getHeight();
+
+        double x;
+        if (width >= height && width > i) {
+            x = width / height;
+            width = i;
+            height = (int) (i / x);
+        } else if (height >= width && height > i) {
+            x = height / width;
+            height = i;
+            width = (int) (i / x);
+        }
+        return Bitmap.createScaledBitmap(img, width, height, true);
+    }
 
 
     private void askCameraPermissions() {
