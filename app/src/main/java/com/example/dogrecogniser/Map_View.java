@@ -142,6 +142,7 @@ public class Map_View extends FragmentActivity implements OnMapReadyCallback,
         switch(v.getId())
         {
             case R.id.btn_find:
+                mMap.clear();
                 EditText tf_location =  findViewById(R.id.ed_searchPlace);
                 String location = tf_location.getText().toString();
                 List<Address> addressList;

@@ -64,6 +64,7 @@ public class HistoryFragment extends Fragment {
                 breedlist = new ArrayList<>();
                 urllist = new ArrayList<>();
 
+                historylist.setAdapter(null);
                 for (DataSnapshot breed:snapshot.getChildren()){
                         breedlist.add(breed.getKey());
                         urllist.add(breed.child("Url").getValue().toString());
